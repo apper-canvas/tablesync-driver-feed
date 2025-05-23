@@ -4,6 +4,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import WaitlistManager from './components/WaitlistManager'
+import UserProfile from './components/UserProfile'
 
 function App() {
   const location = useLocation()
@@ -14,6 +16,8 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/waitlist" element={<WaitlistManager />} />
+          <Route path="/profile" element={<UserProfile />} />
         </Routes>
       </AnimatePresence>
       
