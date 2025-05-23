@@ -64,19 +64,17 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        glow: {
+          'from': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.5)' },
+          'to': { boxShadow: '0 0 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(99, 102, 241, 0.3)' }
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' }
         }
       }
     },
-    keyframes: {
-      glow: {
-        'from': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.5)' },
-        'to': { boxShadow: '0 0 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(99, 102, 241, 0.3)' }
-      },
-      shimmer: {
-        '0%': { backgroundPosition: '-200% 0' },
-        '100%': { backgroundPosition: '200% 0' }
-      }
-    }
   },
   plugins: [],
   darkMode: 'class',

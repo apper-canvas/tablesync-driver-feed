@@ -92,7 +92,6 @@ function UserProfile() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-surface-50 via-white to-primary-50 dark:from-surface-900 dark:via-surface-800 dark:to-surface-900 p-4 sm:p-6 lg:p-8">
-    <div className="min-h-screen bg-gradient-to-br from-surface-50 via-primary-50/30 to-secondary-100/50 dark:from-surface-900 dark:via-cyber-purple/10 dark:to-cyber-blue/10 p-4 sm:p-6 lg:p-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           <div>
@@ -365,7 +364,6 @@ function UserProfile() {
           )}
         </motion.div>
       </div>
-    </div>
   )
 }
 
