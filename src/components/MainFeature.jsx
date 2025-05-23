@@ -31,10 +31,11 @@ function MainFeature() {
   const [searchFilters, setSearchFilters] = useState({
     date: format(new Date(), 'yyyy-MM-dd'),
     time: '7:00 PM',
-  const [tableAvailability, setTableAvailability] = useState([])
+    partySize: 2,
     cuisine: '',
     location: ''
   })
+  const [tableAvailability, setTableAvailability] = useState([])
   const [selectedRestaurant, setSelectedRestaurant] = useState(null)
   const [bookingDetails, setBookingDetails] = useState({
     name: '',
@@ -42,7 +43,6 @@ function MainFeature() {
     specialRequests: '',
     selectedTime: ''
   })
-  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants)
   const [isLoading, setIsLoading] = useState(false)
   const [showWaitlistOption, setShowWaitlistOption] = useState(false)
   const [waitlistDetails, setWaitlistDetails] = useState({
@@ -54,6 +54,8 @@ function MainFeature() {
 
   const handleSearch = () => {
     setIsLoading(true)
+    
+    setTimeout(() => {
       // Simulate checking table availability for The Neon Garden
       const hasAvailability = Math.random() > 0.4
       const availableTimes = hasAvailability ? 
@@ -61,13 +63,10 @@ function MainFeature() {
         []
       
       setTableAvailability(availableTimes)
+      setSelectedRestaurant(restaurant)
       setStep('booking')
-      }))
-      
-      setFilteredRestaurants(filtered)
-      setStep('restaurant')
-    setSelectedRestaurant(restaurant)
-    setStep('booking')
+      setIsLoading(false)
+    }, 1500)
   }
 
   const handleBooking = () => {
@@ -445,6 +444,7 @@ function MainFeature() {
 
         {/* Waitlist Step */}
         {step === 'booking' && showWaitlistOption && (
+          <motion.div
             key="waitlist"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -457,19 +457,19 @@ function MainFeature() {
                   Join Waitlist
                 </h4>
                 <p className="text-sm text-surface-600 dark:text-surface-400">
-                  {selectedRestaurant.name} • {format(new Date(searchFilters.date), 'EEEE, MMMM do')}
                   {restaurant.name} • {format(new Date(searchFilters.date), 'EEEE, MMMM do')}
+                </p>
               </div>
               <button
-                onClick={() => setStep('restaurant')}
                 onClick={() => {
                   setShowWaitlistOption(false)
                   setStep('search')
                 }}
+                className="btn-secondary flex items-center space-x-2 text-sm"
               >
                 <ApperIcon name="ArrowLeft" className="w-4 h-4" />
-                <span>Back to Restaurants</span>
                 <span>Back to Search</span>
+              </button>
             </div>
 
             <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-6">
