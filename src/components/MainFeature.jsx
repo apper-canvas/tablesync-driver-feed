@@ -195,9 +195,9 @@ function MainFeature() {
           {['search', 'restaurant', 'booking', 'confirmation'].map((stepName, index) => (
             <div key={stepName} className="flex items-center">
               <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
-                step === stepName ? 'bg-primary text-white shadow-lg' :
-                ['search', 'restaurant', 'booking', 'confirmation'].indexOf(step) > index ? 'bg-primary-light text-white' :
-                'bg-surface-200 dark:bg-surface-700 text-surface-600 dark:text-surface-400'
+                step === stepName ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-neon' :
+                ['search', 'restaurant', 'booking', 'confirmation'].indexOf(step) > index ? 'bg-gradient-to-r from-primary-light to-secondary-light text-white shadow-card' :
+                'bg-surface-200/80 dark:bg-surface-700/80 text-surface-600 dark:text-surface-400'
               }`}>
                 {index + 1}
               </div>
@@ -398,7 +398,7 @@ function MainFeature() {
                             {restaurant.availability.slice(0, 3).map((time) => (
                               <span
                                 key={time}
-                                className="text-xs bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded"
+                                className="text-xs bg-gradient-to-r from-primary/10 to-secondary/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded border border-primary/20"
                               >
                                 {time}
                               </span>
@@ -424,7 +424,7 @@ function MainFeature() {
                                 setShowWaitlistOption(true)
                                 setStep('booking')
                               }}
-                              className="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-xl transition-all duration-300 text-sm"
+                              className="w-full bg-gradient-to-r from-accent to-cyber-green hover:from-accent/80 hover:to-cyber-green/80 text-white font-medium py-2 px-4 rounded-xl transition-all duration-300 text-sm shadow-neon"
                             >
                               Join Waitlist
                             </button>
@@ -496,8 +496,8 @@ function MainFeature() {
                     onClick={() => setBookingDetails({...bookingDetails, selectedTime: time})}
                     className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                       bookingDetails.selectedTime === time
-                        ? 'bg-primary text-white shadow-lg'
-                        : 'bg-surface-100 dark:bg-surface-700 text-surface-900 dark:text-surface-100 hover:bg-surface-200 dark:hover:bg-surface-600'
+                        ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-neon'
+                        : 'bg-surface-100/80 dark:bg-surface-700/80 text-surface-900 dark:text-surface-100 hover:bg-surface-200/80 dark:hover:bg-surface-600/80 border border-primary/10 dark:border-cyber-blue/20'
                     }`}
                   >
                     {time}
@@ -642,8 +642,8 @@ function MainFeature() {
                     }}
                     className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                       waitlistDetails.preferredTimes.includes(time)
-                        ? 'bg-primary text-white shadow-lg'
-                        : 'bg-surface-100 dark:bg-surface-700 text-surface-900 dark:text-surface-100 hover:bg-surface-200 dark:hover:bg-surface-600'
+                        ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-neon'
+                        : 'bg-surface-100/80 dark:bg-surface-700/80 text-surface-900 dark:text-surface-100 hover:bg-surface-200/80 dark:hover:bg-surface-600/80 border border-primary/10 dark:border-cyber-blue/20'
                     }`}
                   >
                     {time}
@@ -768,8 +768,8 @@ function MainFeature() {
                     onClick={() => setBookingDetails({...bookingDetails, selectedTime: time})}
                     className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                       bookingDetails.selectedTime === time
-                        ? 'bg-primary text-white shadow-lg'
-                        : 'bg-surface-100 dark:bg-surface-700 text-surface-900 dark:text-surface-100 hover:bg-surface-200 dark:hover:bg-surface-600'
+                        ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-neon'
+                        : 'bg-surface-100/80 dark:bg-surface-700/80 text-surface-900 dark:text-surface-100 hover:bg-surface-200/80 dark:hover:bg-surface-600/80 border border-primary/10 dark:border-cyber-blue/20'
                     }`}
                   >
                     {time}
@@ -864,7 +864,7 @@ function MainFeature() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="text-center space-y-6"
           >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-accent to-cyber-green rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon animate-pulse">
               <ApperIcon name="Clock" className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
             </div>
             
@@ -896,7 +896,7 @@ function MainFeature() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="text-center space-y-6"
           >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon animate-pulse">
               <ApperIcon name="Check" className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
             </div>
             
@@ -931,7 +931,7 @@ function MainFeature() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-surface-600 dark:text-surface-400">Confirmation:</span>
-                  <span className="font-medium text-primary">#TS{Math.random().toString(36).substr(2, 6).toUpperCase()}</span>
+                  <span className="font-medium bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">#TS{Math.random().toString(36).substr(2, 6).toUpperCase()}</span>
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-surface-50 via-white to-primary-50 dark:from-surface-900 dark:via-surface-800 dark:to-surface-900">
+    <div className="min-h-screen bg-gradient-to-br from-surface-50 via-primary-50/30 to-secondary-100/50 dark:from-surface-900 dark:via-cyber-purple/10 dark:to-cyber-blue/10">
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
@@ -33,7 +33,7 @@ function App() {
         pauseOnHover
         theme="light"
         className="z-50"
-        toastClassName="bg-white dark:bg-surface-800 text-surface-900 dark:text-surface-100 shadow-soft rounded-xl border border-surface-200 dark:border-surface-700"
+        toastClassName="bg-white/90 backdrop-blur-lg dark:bg-surface-800/90 text-surface-900 dark:text-surface-100 shadow-holo rounded-xl border border-primary/20 dark:border-cyber-blue/30"
       />
     </div>
   )

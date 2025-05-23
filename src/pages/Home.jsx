@@ -20,9 +20,9 @@ function Home() {
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-48 h-48 bg-accent rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-primary-light rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-40 right-20 w-48 h-48 bg-gradient-to-r from-accent to-cyber-green rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-r from-cyber-purple to-cyber-pink rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       {/* Header */}
@@ -34,7 +34,7 @@ function Home() {
             transition={{ delay: 0.2 }}
             className="flex items-center space-x-3"
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center shadow-card">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-neon">
               <ApperIcon name="UtensilsCrossed" className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
@@ -52,7 +52,7 @@ function Home() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
             onClick={toggleDarkMode}
-            className="p-2 sm:p-3 rounded-xl bg-surface-100 dark:bg-surface-800 hover:bg-surface-200 dark:hover:bg-surface-700 transition-all duration-300 shadow-soft hover:shadow-card"
+            className="p-2 sm:p-3 rounded-xl bg-surface-100/80 dark:bg-surface-800/80 hover:bg-surface-200/80 dark:hover:bg-surface-700/80 transition-all duration-300 shadow-holo hover:shadow-neon backdrop-blur-sm border border-primary/10 dark:border-cyber-blue/20"
           >
             <ApperIcon 
               name={darkMode ? "Sun" : "Moon"} 
@@ -72,7 +72,7 @@ function Home() {
             className="mb-8 sm:mb-12"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-              <span className="bg-gradient-to-r from-surface-900 via-primary to-primary-dark dark:from-surface-100 dark:via-primary-light dark:to-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-surface-900 via-primary to-secondary dark:from-surface-100 dark:via-primary-light dark:to-secondary-light bg-clip-text text-transparent">
                 Book Your Perfect
               </span>
               <br />
@@ -99,7 +99,7 @@ function Home() {
                 key={index}
                 className="flex flex-col items-center p-4 sm:p-6 card-neu min-w-[120px] sm:min-w-[140px]"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-light to-primary rounded-xl flex items-center justify-center mb-2 sm:mb-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-2 sm:mb-3 shadow-neon">
                   <ApperIcon name={stat.icon} className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div className="text-lg sm:text-xl font-bold text-surface-900 dark:text-surface-100">
@@ -126,7 +126,7 @@ function Home() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-neon">
                 <ApperIcon name="UtensilsCrossed" className="w-4 h-4 text-white" />
               </div>
               <span className="font-semibold text-surface-900 dark:text-surface-100">TableSync</span>

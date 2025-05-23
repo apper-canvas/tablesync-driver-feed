@@ -92,7 +92,7 @@ function UserProfile() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-surface-50 via-white to-primary-50 dark:from-surface-900 dark:via-surface-800 dark:to-surface-900 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-surface-50 via-primary-50/30 to-secondary-100/50 dark:from-surface-900 dark:via-cyber-purple/10 dark:to-cyber-blue/10 p-4 sm:p-6 lg:p-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           <div>
@@ -128,7 +128,7 @@ function UserProfile() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center justify-center space-x-2 py-3 px-4 rounded-xl transition-all duration-300 ${
                   activeTab === tab.id
-                    ? 'bg-primary text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-neon'
                     : 'text-surface-600 dark:text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-700'
                 }`}
               >
@@ -186,7 +186,7 @@ function UserProfile() {
                           {waitlist.preferredTimes.map((time) => (
                             <span
                               key={time}
-                              className="text-xs bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded"
+                              className="text-xs bg-gradient-to-r from-primary/10 to-secondary/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded border border-primary/20"
                             >
                               {time}
                             </span>
@@ -274,7 +274,7 @@ function UserProfile() {
                           </p>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
+                          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-accent/20 to-cyber-green/20 text-accent dark:text-cyber-green border border-accent/30">
                             Confirmed
                           </span>
                           <button
