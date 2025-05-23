@@ -55,7 +55,7 @@ function WaitlistStatus({ position, estimatedWait, status }) {
             )}
           </div>
           <p className="text-sm text-surface-600 dark:text-surface-400">
-            {status === 'available' ? 'Table Available' : 'Position in line'}
+            {status === 'available' ? 'Table Available at The Neon Garden' : 'Position in waitlist'}
           </p>
         </div>
 
@@ -91,7 +91,7 @@ function WaitlistStatus({ position, estimatedWait, status }) {
           <div className="flex items-center justify-center space-x-2 text-green-600 dark:text-green-400">
             <ApperIcon name="Bell" className="w-4 h-4" />
             <span className="text-sm font-medium">
-              Notification sent!
+              The Neon Garden will contact you shortly!
             </span>
           </div>
         )}
