@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { useNavigate } from 'react-router-dom'
 import ApperIcon from './ApperIcon'
 import WaitlistStatus from './WaitlistStatus'
+import WaitlistPositionDisplay from './WaitlistPositionDisplay'
 
 function UserProfile() {
   const navigate = useNavigate()
@@ -192,11 +193,24 @@ function UserProfile() {
                           ))}
                         </div>
                       </div>
-                      <div className="w-full lg:w-64">
-                        <WaitlistStatus
+                      <div className="w-full lg:w-80 space-y-4">
+                        {/* Enhanced Position Display */}
+                        <WaitlistPositionDisplay
                           position={waitlist.position}
                           estimatedWait={waitlist.estimatedWait}
                           status={waitlist.status}
+                          restaurantName={waitlist.restaurantName}
+                          joinedAt={waitlist.joinedAt}
+                          totalInQueue={waitlist.totalInQueue || 15}
+                        />
+                        
+                        {/* Compact Status for Quick Reference */}
+                        <div className="lg:hidden">
+                          <WaitlistStatus
+                            position={waitlist.position}
+                            estimatedWait={waitlist.estimatedWait}
+                            status={waitlist.status}
+                          />
                         />
                       </div>
                     </div>
