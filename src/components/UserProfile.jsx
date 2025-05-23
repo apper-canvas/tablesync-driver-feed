@@ -211,7 +211,7 @@ function UserProfile() {
                             estimatedWait={waitlist.estimatedWait}
                             status={waitlist.status}
                           />
-                        />
+                        </div>
                       </div>
                     </div>
                   </motion.div>
